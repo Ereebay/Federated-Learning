@@ -1,0 +1,33 @@
+config_name: 'fed_avg_exp'
+
+
+Total:
+  alogrithm: 'fed_avg'
+  node_num: 5
+  R: 50
+  E: 5
+  GPU_ID: '0'
+  data_dir: ''
+
+Model:
+  global_model: 'LeNet5'
+  local_model: 'LeNet5'
+
+Data:
+  dataset: 'cifar10'
+  batchsize: 128
+  val_ratio: 0.1
+  sampling_mode: 'non-iid'
+  equal: True
+  frac: 0.8
+  alpha: 1.0
+
+Optima:
+  optimizer: 'sgd'
+  local_lr: 0.1
+  meme_lr: 0.1
+  lr_step: 1
+  stop_decay: 50
+  momentum: 0.9
+  alpha: 0.5
+  beta: 0.5
